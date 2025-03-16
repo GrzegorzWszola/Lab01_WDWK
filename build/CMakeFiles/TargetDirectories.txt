@@ -1,0 +1,3 @@
+/home/grzegorz/Desktop/LabWDWK/Lab01_app/build/CMakeFiles/run.dir
+/home/grzegorz/Desktop/LabWDWK/Lab01_app/build/CMakeFiles/edit_cache.dir
+/home/grzegorz/Desktop/LabWDWK/Lab01_app/build/CMakeFiles/rebuild_cache.dir
