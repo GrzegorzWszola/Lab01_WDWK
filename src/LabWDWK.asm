@@ -21,12 +21,12 @@ overflow_error:
     # Handle overflow error and display an error message
     pushl $overflow_message
     call printf
-    addl $4, %esp
+    popl %eax
     
     # FFlush to show the message
     pushl stdout    # Push address of stdout
     call fflush
-    addl $4, %esp  # Clean up stack
+    popl %eax
 
     # Exit program with an error code
     movl $1, %ebx
@@ -37,14 +37,15 @@ overflow_error:
 main:
     # Print prompt message asking for user input
     pushl $insert_text
-    call printf
-    addl $4, %esp
+    call printf	
+    popl %eax
 
     # Get user input for n
     pushl $n
     pushl $format_in
     call scanf
-    addl $8, %esp
+    popl %eax
+    popl %eax
 
     # Check if the input exceeds max_value
     movl n, %eax
@@ -82,7 +83,7 @@ main:
     pushl result
     pushl $format_out
     call printf
-    addl $8, %esp
+    popl %eax
 
     # Exit program normally
     movl $0, %ebx
